@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Pirate Games</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logos/Layer 1.png') }}" alt="Pirate Games Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('games_list') }}">Games</a></li>
+            </ul>
+        </nav>
+
+        <!-- Ad Section in Header (Optimal for Banner Ads) -->
+        <div class="ad-section-header">
+            <!-- Place your ad code here (Header Banner Ad) -->
+            <img src="{{ url_for('static', filename='images/ads/header-ad-placeholder.jpg') }}" alt="Header Ad Placeholder">
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="about">
+            <h2>About Pirate Games</h2>
+            <p>Welcome to Pirate Games, your ultimate destination for free PC games! Our website is dedicated to providing gamers with easy access to a vast selection of games at no cost. Whether you’re into action, adventure, strategy, or simulation, we have something for everyone.</p>
+            <p>At Pirate Games, we believe in making gaming accessible to all. That's why we offer a wide range of games for free download. Our platform is designed to be user-friendly, ensuring that you can find and download your favorite games with ease.</p>
+            <p>While our games are free, we do incorporate advertisements on our site. These ads help us maintain and improve the website, ensuring that we can continue to provide free games for our community. We appreciate your understanding and support in this endeavor!</p>
+            <p>Join our community of gamers <a href="{{url_for('about2')}}">today</a> and dive into the world of free gaming adventures. Happy gaming!</p>
+        </section>
+
+        <!-- Ad Section within Main Content (Optimal for In-Content Ads) -->
+        <div class="ad-section-main">
+            <!-- Place your ad code here (In-Content Ad) -->
+            <img src="{{ url_for('static', filename='images/ads/in-content-ad-placeholder.jpg') }}" alt="In-Content Ad Placeholder">
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Pirate Games. All rights reserved.</p>
+            <p>Follow us on our social media channels for updates and news.</p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/pirategames67/" class="social-icon"><img src="{{ url_for('static', filename='images/logos/icons8-instagram-24.png') }}" alt="Instagram"></a>
+                <a href="https://www.youtube.com/channel/UC2c4_a0OwEJBn_Xv_GeOlOQ" target="_blank" class="social-icon"><img src="{{ url_for('static', filename='images/logos/icons8-youtube-24.png') }}" alt="YouTube"></a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                </ul>
+            </div>
+
+            <!-- Ad Section in Footer (Optimal for Footer Ads) -->
+            <div class="ad-section-footer">
+                <!-- Place your ad code here (Footer Ad) -->
+                <img src="{{ url_for('static', filename='images/ads/footer-ad-placeholder.jpg') }}" alt="Footer Ad Placeholder">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

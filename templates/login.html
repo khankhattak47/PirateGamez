@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='basic.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
+</head>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='images/logos/Layer 1.png') }}" alt="logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('games_list') }}">Games</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('games_list') }}">Games</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <!-- Display Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+       
+        <form method="POST" action="{{ url_for('login') }}">
+            <div>
+                <label for="email">Email:</label>
+                <span class="error">{{ error }}</span>
+                <input type="email" name="email" required class="form-control">
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <span class="error">{{ error }}</span>
+                <input type="password" name="password" required class="form-control">
+            </div>
+            <div>
+                <button type="submit" class="btn">Login</button>
+            </div>
+        </form>
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+    </div>
+    
+    <!-- Advertisement Banner -->
+    <section class="ads-banner">
+        <img src="{{ url_for('static', filename='images/ads/ad-banner.jpg') }}" alt="Ad Banner" class="ad-banner">
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Pirate Games. All rights reserved.</p>
+        <div class="footer-ad">
+        </div>
+    </footer>
+</body>
+</html>

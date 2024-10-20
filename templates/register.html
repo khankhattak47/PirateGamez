@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='basic.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
+</head>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logos/Layer 1.png') }}" alt="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('games_list') }}">Games</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        
+        <!-- Display Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        
+        <form method="POST" action="{{ url_for('register') }}">
+            {{ form.hidden_tag() }}
+
+            <div>
+                <label for="username">Username:</label>
+                {{ form.username(class_='form-control', placeholder='Enter your username') }}
+                {% for error in form.username.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                {{ form.email(class_='form-control', placeholder='Enter your email') }}
+                {% for error in form.email.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <div>
+                <label for="password">Password:</label>
+                {{ form.password(class_='form-control', placeholder='Enter your password') }}
+                {% for error in form.password.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <div>
+                <label for="confirm_password">Confirm Password:</label>
+                {{ form.confirm_password(class_='form-control', placeholder='Re-enter your password') }}
+                {% for error in form.confirm_password.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <div>
+                {{ form.submit(class_='btn') }}
+            </div>
+        </form>
+
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+    </div>
+    
+    <!-- Advertisement Banner -->
+    <section class="ads-banner">
+        <img src="{{ url_for('static', filename='images/ads/ad-banner.jpg') }}" alt="Ad Banner" class="ad-banner">
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Pirate Games. All rights reserved.</p>
+        <div class="footer-ad">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({
+                    google_ad_client: "ca-pub-XXXXXX",
+                    enable_page_level_ads: true
+                });
+            </script>
+        </div>
+    </footer>
+</body>
+</html>

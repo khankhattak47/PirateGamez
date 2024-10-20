@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ game['name'] }} - Pirate Games</title>
+    <meta name="site-verification" content="a4f47331dfd44162b3515f60d86e6325"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/game_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/commnt.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-logo">
+                <a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='images/logos/Layer 1.png') }}" alt="logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('games_list') }}">Games</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="game-page">
+        <section class="game-header">
+            <h1>{{ game['name'] }}</h1>
+            <img src="{{ url_for('static', filename='images/game_images/' + game['image']) }}" alt="{{ game['name'] }}">
+        </section>
+        
+        <section class="game-description">
+            <h2>About the Game</h2>
+            <p>{{ game['description'] }}</p>
+        </section>
+        
+        <section class="game-requirements">
+            <h2>System Requirements</h2>
+            <h3>Minimum Requirements:</h3>
+            <ul>
+                {% for min_req in game['min_requirements'] %}
+                <li>{{ min_req }}</li>
+                {% endfor %}
+            </ul>
+            <h3>Recommended Requirements:</h3>
+            <ul>
+                {% for rec_req in game['rec_requirements'] %}
+                <li>{{ rec_req }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        
+        <section class="game-screenshots">
+            <h2>Screenshots:</h2>
+            <div class="screenshot-gallery">
+                {% for screenshot in game['screenshots'] %}
+                <img src="{{ url_for('static', filename='images/screenshots/' + screenshot) }}" alt="Screenshot">
+                {% endfor %}
+            </div>
+        </section>
+        
+        <section class="game-download">
+            <h2>Download Now:</h2>
+            <a href="{{ game['download_link'] }}" target="_blank" class="cta-button">Download Now</a>
+        </section>
+        
+        <section class="back-to-home">
+            <a href="{{ url_for('games_list') }}" class="cta-button">Back to Home</a>
+        </section>
+        
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='images/logos/Layer 1.png') }}" alt="logo"></a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('games_list') }}">Games</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pirate Games. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

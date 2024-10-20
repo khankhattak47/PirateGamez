@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Pirate Games</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='images/logos/Layer 1.png') }}" alt="logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('games_list') }}">Games</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Ad Section in Header -->
+        <div class="header-ad">
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Welcome to Pirate Games</h1>
+                <p>Your gateway to the best free PC games. Discover, download, and enjoy endless adventures.</p>
+                <a href="{{ url_for('games_list') }}" class="cta-button">Browse Games</a>
+            </div>
+        </section>
+        
+        <!-- Ad Section in Main Content -->
+        <div class="main-ad">
+        </div>
+        
+        <!-- <section class="game-list">
+            <h2>Available Games</h2>
+            <div class="game-items">
+                {% for game in games %}
+                <article class="game-item">
+                    <img src="{{ url_for('static', filename='images/game_images/' + game['image']) }}" 
+                         alt="{{ game['name'] }} cover image" 
+                         class="game-image" 
+                         loading="lazy">
+                    <h3>{{ game['name'] }}</h3>
+                    <p class="game-description">{{ game['description'] }}</p>
+                    <a href="{{ url_for('game_page', game_id=game['id']) }}" class="cta-button" aria-label="Download {{ game['name'] }}">Download</a>
+                </article>
+    
+                <!-- Insert Inline Ad every 4 games -->
+                {% if loop.index % 4 == 0 %}
+                <section class="inline-ad">
+                </section>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+         -->
+        <!-- Another Ad Section after Featured Games -->
+        <div class="section-ad">
+        </div>
+        
+        <section class="about">
+            <h2>About Us</h2>
+            <p>We are dedicated to providing a vast selection of PC games for free. Join our community and experience the thrill!</p>
+            <a href="{{ url_for('about') }}" class="cta-button">Learn More</a>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='images/logos/Layer 1.png') }}" alt="logo"></a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="{{ url_for('games_list') }}">Games</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/pirategames67/" class="social-icon"><img src="{{ url_for('static', filename='images/logos/icons8-instagram-24.png') }}" alt="Instagram"></a>
+                <a href="https://www.youtube.com/channel/UC2c4_a0OwEJBn_Xv_GeOlOQ" target="_blank" class="social-icon"><img src="{{ url_for('static', filename='images/logos/icons8-youtube-24.png') }}" alt="YouTube"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pirate Games. All rights reserved.</p>
+            
+            <!-- Ad Section in Footer -->
+            <div class="footer-ad">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
