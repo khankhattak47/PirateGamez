@@ -1,53 +1,3 @@
-# Improved dummy data for games
-games = [
-    # {
-    #     'name': 'FarCry 5',
-    #     'image': 'FarCry 5.jpg',
-    #     'description': 'Adventure through an epic quest in this thrilling game.',
-    #     'page_url': 'FarCry 5',
-    #     'genre': 'Action-Adventure',
-    #     'release_year': 2018,
-    #     'rating': 8.5  # Out of 10
-    # },
-    # {
-    #     'name': 'Sniper Elite 3',
-    #     'image': 'Sniper Elite 3.jpg',
-    #     'description': 'Tactical stealth and sniper skills in World War II.',
-    #     'page_url': 'Sniper Elite 3',
-    #     'genre': 'Shooter',
-    #     'release_year': 2014,
-    #     'rating': 8.0
-    # },
-    # {
-    #     'name': 'Sniper Elite 4',
-    #     'image': 'Sniper Elite 4.jpg',
-    #     'description': 'Tactical stealth and sniper skills in World War II.',
-    #     'page_url': 'Sniper Elite 4',
-    #     'genre': 'Shooter',
-    #     'release_year': 2017,
-    #     'rating': 8.2
-    # },
-    # {
-    #     'name': 'Assassin\'s Creed Odyssey',
-    #     'image': 'Assassins_Creed_Odyssey.jpg',
-    #     'description': 'Embark on an epic journey in ancient Greece.',
-    #     'page_url': 'Assassins_Creed_Odyssey',
-    #     'genre': 'Action RPG',
-    #     'release_year': 2018,
-    #     'rating': 9.0
-    # },
-    # {
-    #     'name': 'The Witcher 3: Wild Hunt',
-    #     'image': 'Witcher_3.jpg',
-    #     'description': 'A vast open-world RPG filled with adventures and choices.',
-    #     'page_url': 'Witcher_3',
-    #     'genre': 'RPG',
-    #     'release_year': 2015,
-    #     'rating': 9.7
-    # },
-    # # Add more games here...
-]
-#####################################################################################
 
 # game_data.py
 game_data = {
@@ -81,26 +31,6 @@ game_data = {
         'download_link': "https://uploadscloud.com/3a4jijreh11h/ThePcGames.net_Assassins_Creed_2_v1.01_Repack.zip.html"
     }
 }
-
-
-# Sample data for games
-# game_data.py
-
-# featured_games = [
-#     {
-#         'id': 1,
-#         'name': 'Forza Horizon 5',
-#         'image': 'Forza_Horizon_5.jpg',
-#         'description': 'A thrilling racing game set in an open world.'
-#     },
-#     {
-#         'id': 2,
-#         'name': 'Mount And Blade 2 Bannerlord',
-#         'image': 'Mount_And_Blade_2_Bannerlord.jpg',
-#         'description': 'A medieval action-RPG and strategy game.'
-#     },
-#     # Add more games as needed
-# ]
 
 
 
