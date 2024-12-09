@@ -1,1 +1,6 @@
-
+[nix]
+pkgs = [
+  "python3",
+  "gcc",
+  "libmysqlclient"
+]
